@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche Panamera Turbo S E-Hybrid</title>
+    <style>
+        /* Estilos Base Actualizados */
+        body {
+            background-image: linear-gradient(rgba(59, 59, 59, 0.33), rgba(0, 0, 0, 0.7)), url('https://i.pinimg.com/1200x/28/3a/e6/283ae6837bac59d71e467d6935904c76.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        /* Pantalla de Inicio */
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #3a3939e8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 1s ease, visibility 1s;
+        }
+
+        #start-btn {
+            background: transparent;
+            color: white;
+            border: 1px solid #ffffffff;
+            padding: 15px 40px;
+            font-size: 1rem;
+            letter-spacing: 3px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        #start-btn:hover {
+            background: #6f6f6fff;
+            box-shadow: 0 0 20px rgba(13, 13, 13, 0.88);
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0; 
+            transition: opacity 2s ease;
+        }
+
+        header {
+            padding: 60px;
+            text-align: center;
+            background: rgba(134, 134, 134, 0.12);
+            width: 100%;
+            border-bottom: 1px solid #c6c4c425;
+        }
+
+        main {
+            max-width: 850px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(15px);
+            margin: 40px 0;
+            border-radius: 4px;
+            border: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        h1 { font-size: 3.5rem; text-transform: uppercase; letter-spacing: 10px; margin: 0; font-weight: 200; }
+        p.subtitle { color: #aaa; letter-spacing: 5px; text-transform: uppercase; font-size: 0.9rem; }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        li {
+            background: rgba(179, 179, 179, 0.05);
+            padding: 10px 25px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Secciones de Características */
+        .feature-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            width: 90%;
+            max-width: 1100px;
+            margin: 60px 0;
+            flex-wrap: wrap;
+        }
+
+        .feature-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .feature-img {
+            flex: 1;
+            min-width: 300px;
+            max-width: 550px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .feature-text {
+            flex: 1;
+            min-width: 300px;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #ddd;
+            text-align: left;
+            border-left: 2px solid #b5b5b5ff;
+            padding-left: 25px;
+        }
+
+        iframe {
+            margin: 50px 0;
+            border-radius: 8px;
+            box-shadow: 0 20px 40px rgba(21, 21, 21, 0.6);
+        }
+
+        footer {
+            padding: 40px;
+            font-size: 0.7rem;
+            color: #666;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <audio id="porsche-audio"></audio>
+
+    <div id="overlay">
+        <h1 style="margin-bottom: 20px;">PORSCHE</h1>
+        <button id="start-btn" onclick="ignite()">Explorar el Modelo</button>
+    </div>
+
+    <div class="content-wrapper" id="main-content">
+        <header id="top-anchor">
+            <h1>Porsche Panamera</h1>
+            <p class="subtitle">Turbo S E-Hybrid</p>
+        </header>
+
+        <main>
+            <h2>Rendimiento Inigualable</h2>
+            <p>Potencia combinada de 771 CV - Aceleración de 0 a 100 km/h en 3.1 segundos.</p>
+            <ul>
+                <li>Híbrido Enchufable</li>
+                <li>Lujo incomparable</li>
+                <li>ADN Deportivo</li>
+            </ul>
+        </main>
+
+        <div class="feature-row">
+            <img src="https://i.pinimg.com/1200x/2a/ef/10/2aef10fa411ce853988c4c8d5d42fcc7.jpg" class="feature-img">
+            <div class="feature-text">
+                El Panamera 4 E-Hybrid convierte los viajes en eventos deportivos y los negocios en puro placer...
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <img src="https://i.pinimg.com/1200x/9d/0d/9f/9d0d9f46180d1536ac69fe799bad49b4.jpg" class="feature-img">
+            <div class="feature-text">
+                En los modelos Panamera E-Hybrid, el motor eléctrico y el motor de combustión se combinan para formar una unidad dinámica...
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <img src="https://a.storyblok.com/f/322327/2616x1472/a6046320b9/pa24p5fox0002-panamera-4s-e-hybrid-front.jpg/m/1800x1012/smart/filters:format(avif)" class="feature-img">
+            <div class="feature-text">
+                El chasis de alta gama Porsche Active Ride es un sistema activo que aumenta significativamente el confort y las prestaciones...
+            </div>
+        </div>
+
+        <div class="feature-row">
+            <img src="https://i.pinimg.com/736x/cd/6a/f8/cd6af8af5ba7ed2299c0588746dff1db.jpg" class="feature-img">
+            <div class="feature-text">
+                Los modelos Panamera combinan un dinamismo de conducción deportivo y un alto nivel de confort...
+            </div>
+        </div>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/UJwZQGyzcJA?si=MpaYx3dcwTzTKIXB&amp;controls=0" title="YouTube video player" frameborder="0" allowfullscreen></iframe>
+
+        <footer>
+           
+        
+             <h3>CREADO POR: LUIS ANTONIO — APLICACIONES COMPUTACIONALES 2026</h3>
+            
+        </footer>
+    </div>
+
+    <script>
+        function ignite() {
+            const audio = document.getElementById('porsche-audio');
+            const overlay = document.getElementById('overlay');
+            const content = document.getElementById('main-content');
+
+            // 1. Regresar al inicio de la página inmediatamente
+            window.scrollTo(0, 0);
+
+            // 2. Configurar y tocar audio
+            const fileID = '1qCIjh4jrj4RM1qewvdMn9ysgWqv1YK-k'; 
+            audio.src = 'https://docs.google.com/uc?export=download&id=' + fileID;
+            audio.play().catch(e => console.log("Audio en espera"));
+
+            // 3. Transición visual
+            overlay.style.opacity = '0';
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                content.style.opacity = '1';
+                document.body.style.overflowY = 'auto'; 
+            }, 1000);
+        }
+        
+        // Esto asegura que si el usuario refresca la página, empiece arriba
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+    </script>
+</body>
+</html>
